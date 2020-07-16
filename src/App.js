@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './styles.css';
+import Inputs from './components/Inputs';
 
 function App() {
   const [inputs, setInputs] = useState({
@@ -18,18 +19,7 @@ function App() {
   return (
     <>
       <main className="inputMain">
-        <input
-          name="name"
-          type="text"
-          placeholder="이름을 입력하세요."
-          onChange={onChage}
-        />
-        <input
-          name="email"
-          type="email"
-          placeholder="이메일을 입력하세요."
-          onChange={onChage}
-        />
+        <Inputs onChange={onChage} />
         <p>이름 : {inputs.name}</p>
         <p>이메일 : {inputs.email}</p>
       </main>
