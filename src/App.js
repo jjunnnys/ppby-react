@@ -1,28 +1,26 @@
 import React, { useState } from 'react';
 import './styles.css';
-import Inputs from './components/Inputs';
+import Info from './components/Info';
 
 function App() {
-  const [inputs, setInputs] = useState({
-    name: '',
+  const [info, setInfo] = useState({
+    username: '',
     email: '',
   });
 
   const onChage = (e) => {
     const { name, value } = e.target;
-    setInputs({
-      ...inputs,
+    setInfo({
+      ...info,
       [name]: value,
     });
   };
 
   return (
     <>
-      <main className="inputMain">
-        <Inputs onChange={onChage} />
-        <p>이름 : {inputs.name}</p>
-        <p>이메일 : {inputs.email}</p>
-      </main>
+      <section className="inputSection">
+        <Info onChange={onChage} />
+      </section>
     </>
   );
 }

@@ -1,4 +1,4 @@
-.inputMain {
+.inputSection {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,7 @@
   padding: 3rem;
 }
 
-.inputMain input {
+.inputSection input {
   width: 50%;
   height: 5rem;
   padding: 0.5rem;
@@ -19,10 +19,10 @@
   font-size: 3rem;
 }
 
-.inputMain input:focus {
+.inputSection input:focus {
   outline: none;
 }
 
-.inputMain input:nth-child(2) {
+.inputSection input:nth-child(2) {
   margin-top: 2rem;
 }

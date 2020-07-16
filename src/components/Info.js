@@ -13,7 +13,7 @@ const Button = styled.button`
   font-weight: 700;
 
   cursor: pointer;
-  transition: background-color 0.3s ease-in;
+  transition: background-color 0.2s ease-in;
 
   &:focus {
     outline: none;
@@ -24,12 +24,12 @@ const Button = styled.button`
   }
 `;
 
-const Inputs = ({ onChange }) => {
+const Info = ({ onChange }) => {
   return (
     <>
       <input
         type="text"
-        name="name"
+        name="username"
         placeholder="이름을 입력하세요."
         onChange={onChange}
       />
@@ -39,8 +39,8 @@ const Inputs = ({ onChange }) => {
         placeholder="이메일을 입력하세요."
         onChange={onChange}
       />
-      <Button>추가</Button>
+      <Button type="button">추가</Button>
     </>
   );
 };
-export default Inputs;
+export default Info;
