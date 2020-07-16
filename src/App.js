@@ -30,6 +30,8 @@ function App() {
           placeholder="이메일을 입력하세요."
           onChange={onChage}
         />
+        <p>이름 : {inputs.name}</p>
+        <p>이메일 : {inputs.email}</p>
       </main>
     </>
   );
