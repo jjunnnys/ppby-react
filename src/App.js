@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './styles.css';
 
 function App() {
+  const [inputs, setInputs] = useState({
+    name: '',
+    email: '',
+  });
+
+  const onChage = (e) => {
+    const { name, value } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <main className="inputMain">
+        <input
+          name="name"
+          type="text"
+          placeholder="이름을 입력하세요."
+          onChange={onChage}
+        />
+        <input
+          name="email"
+          type="email"
+          placeholder="이메일을 입력하세요."
+          onChange={onChage}
+        />
+      </main>
+    </>
   );
 }
 
