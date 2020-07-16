@@ -16,10 +16,15 @@ function App() {
     });
   };
 
+  const onCreate = () => {
+    const { username, email } = info;
+    console.log(username, email);
+  };
+
   return (
     <>
       <section className="inputSection">
-        <Info onChange={onChage} />
+        <Info onChange={onChage} onCreate={onCreate} />
       </section>
     </>
   );

@@ -6,7 +6,7 @@ const Button = styled.button`
   width: 5rem;
   height: 3rem;
   border: none;
-  background-color: #bac8ff;
+  background-color: #ffd8a6;
   border-radius: 5px;
 
   font-size: 2rem;
@@ -20,11 +20,11 @@ const Button = styled.button`
   }
 
   &:hover {
-    background-color: #4c6ef5;
+    background-color: #fc8210;
   }
 `;
 
-const Info = ({ onChange }) => {
+const Info = ({ onChange, onCreate }) => {
   return (
     <>
       <input
@@ -39,7 +39,9 @@ const Info = ({ onChange }) => {
         placeholder="이메일을 입력하세요."
         onChange={onChange}
       />
-      <Button type="button">추가</Button>
+      <Button type="button" onClick={onCreate}>
+        추가
+      </Button>
     </>
   );
 };
