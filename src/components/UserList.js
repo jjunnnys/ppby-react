@@ -17,8 +17,8 @@ const InfoLi = styled.li`
 const UserList = ({ infoList }) => {
   return (
     <ul>
-      {infoList.map((info) => (
-        <InfoLi>
+      {infoList.map((info, index) => (
+        <InfoLi key={index}>
           <dt>{info.username}</dt>
           <dl>{info.email}</dl>
         </InfoLi>

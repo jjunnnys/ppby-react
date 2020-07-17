@@ -2,21 +2,14 @@ import React, { useState } from 'react';
 import './styles.css';
 import Info from './components/Info';
 import UserList from './components/UserList';
+import useInput from './hooks/useInput';
 
 function App() {
-  const [info, setInfo] = useState({
+  const [info, onChage] = useInput({
     username: '',
     email: '',
   });
   const [infoList, setInfoList] = useState([]);
-
-  const onChage = (e) => {
-    const { name, value } = e.target;
-    setInfo({
-      ...info,
-      [name]: value,
-    });
-  };
 
   const onCreateInfo = () => {
     const { username, email } = info;
