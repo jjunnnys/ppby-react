@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css';
 import Info from './components/Info';
+import UserList from './components/UserList';
 
 function App() {
   const [info, setInfo] = useState({
@@ -32,6 +33,7 @@ function App() {
     <>
       <section className="inputSection">
         <Info onChange={onChage} onCreateInfo={onCreateInfo} />
+        <UserList infoList={infoList} />
       </section>
     </>
   );
