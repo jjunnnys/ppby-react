@@ -4,7 +4,7 @@ const InfoContext = createContext({
   state: {
     username: '',
     email: '',
-    userList: [{ username: 'ppby', email: 'salswnss@gmail.com' }],
+    userList: [],
   },
   actions: {
     setUsername: () => {},
