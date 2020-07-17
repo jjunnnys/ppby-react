@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { InfoConsumer } from '../context/info';
 
 const Button = styled.button`
   margin: 1rem 0;
@@ -24,24 +25,50 @@ const Button = styled.button`
   }
 `;
 
-const Info = ({ onChange, onCreateInfo }) => {
+const Info = () => {
+  // consumer 은 한가기 태그만 관리
   return (
     <>
-      <input
-        type="text"
-        name="username"
-        placeholder="이름을 입력하세요."
-        onChange={onChange}
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="이메일을 입력하세요."
-        onChange={onChange}
-      />
-      <Button type="button" onClick={onCreateInfo}>
-        추가
-      </Button>
+      <InfoConsumer>
+        {({ state, actions }) => (
+          <input
+            type="text"
+            name="username"
+            placeholder="이름을 입력하세요."
+            value={state.username}
+            onChange={(e) => actions.setUsername(e.target.value)}
+          />
+        )}
+      </InfoConsumer>
+      <InfoConsumer>
+        {({ state, actions }) => (
+          <input
+            type="email"
+            name="email"
+            placeholder="이메일을 입력하세요."
+            value={state.email}
+            onChange={(e) => actions.setEmail(e.target.value)}
+          />
+        )}
+      </InfoConsumer>
+      <InfoConsumer>
+        {({ state: { username, email, userList }, actions }) => (
+          <Button
+            //  onClick에 함수가 들어와야 함
+            onClick={() => {
+              actions.setUserList([
+                ...userList,
+                {
+                  username: username,
+                  email: email,
+                },
+              ]);
+            }}
+          >
+            추가
+          </Button>
+        )}
+      </InfoConsumer>
     </>
   );
 };

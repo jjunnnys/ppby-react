@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { InfoConsumer } from '../context/info';
 
 const InfoLi = styled.li`
   list-style: none;
@@ -14,16 +15,20 @@ const InfoLi = styled.li`
   }
 `;
 
-const UserList = ({ infoList }) => {
+const UserList = () => {
   return (
-    <ul>
-      {infoList.map((info, index) => (
-        <InfoLi key={index}>
-          <dt>{info.username}</dt>
-          <dl>{info.email}</dl>
-        </InfoLi>
-      ))}
-    </ul>
+    <InfoConsumer>
+      {({ state: { userList } }) => (
+        <ul>
+          {userList.map((info, index) => (
+            <InfoLi key={index}>
+              <dt>{info.username}</dt>
+              <dl>{info.email}</dl>
+            </InfoLi>
+          ))}
+        </ul>
+      )}
+    </InfoConsumer>
   );
 };
 
