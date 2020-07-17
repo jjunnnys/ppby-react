@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   margin: 1rem 0;
-  width: 5rem;
-  height: 3rem;
-  border: none;
+  width: 15rem;
+  height: 5rem;
+  border: 5px solid #fff;
   background-color: #ffd8a6;
   border-radius: 5px;
 
@@ -24,7 +24,7 @@ const Button = styled.button`
   }
 `;
 
-const Info = ({ onChange, onCreate }) => {
+const Info = ({ onChange, onCreateInfo }) => {
   return (
     <>
       <input
@@ -39,7 +39,7 @@ const Info = ({ onChange, onCreate }) => {
         placeholder="이메일을 입력하세요."
         onChange={onChange}
       />
-      <Button type="button" onClick={onCreate}>
+      <Button type="button" onClick={onCreateInfo}>
         추가
       </Button>
     </>

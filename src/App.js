@@ -7,6 +7,7 @@ function App() {
     username: '',
     email: '',
   });
+  const [infoList, setInfoList] = useState([]);
 
   const onChage = (e) => {
     const { name, value } = e.target;
@@ -16,15 +17,21 @@ function App() {
     });
   };
 
-  const onCreate = () => {
+  const onCreateInfo = () => {
     const { username, email } = info;
-    console.log(username, email);
+    setInfoList([
+      ...infoList,
+      {
+        username,
+        email,
+      },
+    ]);
   };
 
   return (
     <>
       <section className="inputSection">
-        <Info onChange={onChage} onCreate={onCreate} />
+        <Info onChange={onChage} onCreateInfo={onCreateInfo} />
       </section>
     </>
   );
